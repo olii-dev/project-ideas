@@ -2,24 +2,27 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Project Idea Generator</title>
+    <title>Project Idea Generator - 3D Design Ideas</title>
     <link type="text/css" rel="stylesheet" href="css/styles.css" />
     <link rel="shortcut icon" type="images/x-icon" href="images/icon-square.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Slackey">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Slackey|Gaegu">
     <style>
         body {
-            font-family: 'Slackey';
+            font-family: 'Gaegu';
             font-size: 13.5px;
             text-align: center;
         }
+        h1, h3, h2, .box {
+            font-family: 'Slackey', cursive;
+        }
     </style>
-        <div class="nav"></div>
-        <div class="nav">
-            <nav center;>
-        <ul>
-            <a href="/" class="box" style="font-size: 20px;">Home</a>
-                </ul>
-             </nav>
+    <div class="nav"></div>
+    <div class="nav">
+        <nav center;>
+            <ul>
+                <a href="/index.html" class="box" style="font-size: 20px;">Home</a>
+            </ul>
+        </nav>
     </div>
 </head>
 <body>
@@ -27,7 +30,7 @@
     <h3 style="font-size: 24px;">Want to create something <b>3D</b> for Hackclub's arcade but don't know what?<br>You're in the right place</h3>
     <h2 class="header">2. Click the arcade machine and it will generate an idea!</h2>
     <a class="box1" id="generateIdeaButton">
-        <img src="images/arcade-machine.png" alt="Arcade Machine" width="250" length="250">
+        <img src="images/arcade-machine.png" alt="Arcade Machine" width="250" height="250">
     </a>
     <hr class="break">
     <div id="idea" style="font-size: 30px;"></div>
@@ -35,5 +38,5 @@
     <hr class="break2">
 
     <script src="script-3d.js"></script>
-    </body>
-    </html>
+</body>
+</html>
