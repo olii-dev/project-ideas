@@ -44,10 +44,40 @@ const hours = [
     "Approx. 10 hours = 10 🎟️",
 ];
 
+let isTyping = false;
+let typingTimeout;
+
+function typeWriter(text, elementId, callback) {
+    let i = 0;
+
+    function typing() {
+        if (i < text.length) {
+            document.getElementById(elementId).innerHTML += text.charAt(i);
+            i++;
+            typingTimeout = setTimeout(typing, 50);
+        } else {
+            isTyping = false;
+            if (callback) callback();
+        }
+    }
+
+    document.getElementById(elementId).innerHTML = "";
+    clearTimeout(typingTimeout);
+    typing();
+}
+
 function generateIdea() {
+    if (isTyping) return;
+    isTyping = true;
+
     const randomIndex = Math.floor(Math.random() * ideas.length);
     const idea = ideas[randomIndex];
     const hour = hours[randomIndex];
-    document.getElementById('idea').innerText = idea;
-    document.getElementById('hours').innerText = hour;
+
+    document.getElementById('idea').innerHTML = "";
+    document.getElementById('hours').innerHTML = "";
+
+    typeWriter(idea, 'idea', function() {
+        typeWriter(` ${hour}`, 'hours');
+    });
 }

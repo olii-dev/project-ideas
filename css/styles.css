@@ -64,6 +64,14 @@ body {
     background-color:#f0e6d2
   }
 
+  .break3 {
+    width:100%;
+    text-align:left;
+    margin-left:0;
+    height:0px;
+    border-width:0;
+    background-color:#f0e6d2
+  }
 
 .bottom p {
     text-align: center;
