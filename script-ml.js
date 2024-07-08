@@ -21,8 +21,33 @@ const ideas = [
     "Develop a system for analyzing customer feedback!"
 ];
 
+const hours = [
+    "Approx. 5 hours = 5 🎟️",
+    "Approx. 18 hours = 18 🎟️",
+    "Approx. 20 hours = 20 🎟️",
+    "Approx. 30 hours = 30 🎟️",
+    "Approx. 22 hours = 22 🎟️",
+    "Approx. 25 hours = 25 🎟️",
+    "Approx. 20 hours = 20 🎟️",
+    "Approx. 18 hours = 18 🎟️",
+    "Approx. 28 hours = 28 🎟️",
+    "Approx. 15 hours = 15 🎟️",
+    "Approx. 25 hours = 25 🎟️",
+    "Approx. 20 hours = 20 🎟️",
+    "Approx. 18 hours = 18 🎟️",
+    "Approx. 20 hours = 20 🎟️",
+    "Approx. 30 hours = 30 🎟️",
+    "Approx. 22 hours = 22 🎟️",
+    "Approx. 20 hours = 20 🎟️",
+    "Approx. 25 hours = 25 🎟️",
+    "Approx. 18 hours = 18 🎟️",
+    "Approx. 18 hours = 18 🎟️",
+];
+
 document.getElementById('generateIdeaButton').addEventListener('click', function() {
     const randomIndex = Math.floor(Math.random() * ideas.length);
     const idea = ideas[randomIndex];
+    const hour = hours[randomIndex];
     document.getElementById('idea').innerText = idea;
+    document.getElementById('hours').innerText = hour;
 });

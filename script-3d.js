@@ -21,9 +21,33 @@ const ideas = [
     "Design a floating modular structure for disaster relief!"
 ];
 
+const hours = [
+    "Approx. 8 hours = 8 🎟️",
+    "Approx. 6 hours = 6 🎟️",
+    "Approx. 12 hours = 12 🎟️",
+    "Approx. 4 hours = 4 🎟️",
+    "Approx. 10 hours = 10 🎟️",
+    "Approx. 15 hours = 15 🎟️",
+    "Approx. 8 hours = 8 🎟️",
+    "Approx. 12 hours = 12 🎟️",
+    "Approx. 6 hours = 6 🎟️",
+    "Approx. 10 hours = 10 🎟️",
+    "Approx. 20 hours = 20 🎟️",
+    "Approx. 4 hours = 4 🎟️",
+    "Approx. 12 hours = 12 🎟️",
+    "Approx. 10 hours = 10 🎟️",
+    "Approx. 6 hours = 6 🎟️",
+    "Approx. 15 hours = 15 🎟️",
+    "Approx. 8 hours = 8 🎟️",
+    "Approx. 4 hours = 4 🎟️",
+    "Approx. 10 hours = 10 🎟️",
+    "Approx. 15 hours = 15 🎟️",
+];
 
 document.getElementById('generateIdeaButton').addEventListener('click', function() {
     const randomIndex = Math.floor(Math.random() * ideas.length);
     const idea = ideas[randomIndex];
+    const hour = hours[randomIndex];
     document.getElementById('idea').innerText = idea;
+    document.getElementById('hours').innerText = hour;
 });
