@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Project Idea Generator - Website Ideas</title>
     <link type="text/css" rel="stylesheet" href="css/styles.css" />
@@ -28,16 +29,20 @@
 <body>
     <h1 style="font-size: 29px;">Project Idea Generator - Website Ideas</h1>
     <h3 style="font-size: 24px;">Website ideas for Hackclub's arcade!</h3>
-    <h2 class="header">2. Click the arcade machine and it will generate a website idea!</h2>
+    <h2 class="header">2. Enter your desired hours range and click the arcade machine to generate an idea!</h2>
+    <label for="minHours">Minimum Hours:</label>
+    <input class="box" type="number" id="minHours" name="minHours" min="1" max="30" value="1">
+    <label for="maxHours">Maximum Hours:</label>
+    <input class="box" type="number" id="maxHours" name="maxHours" min="1" max="30" value="30">
+    <br><br>
     <a class="box1" onclick="generateIdea()">
         <img src="images/arcade-machine.png" alt="Arcade Machine" width="250" height="250">
     </a>
     <hr class="break">
     <div id="idea" style="font-size: 30px;"></div>
     <div id="hours" style="font-size: 20px;"></div>
-    
     <hr class="break2">
 
-    <script src="script-websites.js"></script>
+    <script src="scripts/script-websites.js"></script>
 </body>
 </html>

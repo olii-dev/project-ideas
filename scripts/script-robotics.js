@@ -20,7 +20,7 @@ const ideas = [
     "Develop a robot that can water and tend to plants!",
     "Design a robot that can assist with cooking or food preparation!"
 ];
- 
+
 const hours = [
     "Approx. 7 hours = 7 🎟️",
     "Approx. 15 hours = 15 🎟️",
@@ -70,9 +70,24 @@ function generateIdea() {
     if (isTyping) return;
     isTyping = true;
 
-    const randomIndex = Math.floor(Math.random() * ideas.length);
-    const idea = ideas[randomIndex];
-    const hour = hours[randomIndex];
+    const minHours = parseInt(document.getElementById('minHours').value);
+    const maxHours = parseInt(document.getElementById('maxHours').value);
+
+    const filteredIdeas = ideas.filter((idea, index) => {
+        const hourValue = parseInt(hours[index].match(/\d+/)[0]);
+        return hourValue >= minHours && hourValue <= maxHours;
+    });
+
+    if (filteredIdeas.length === 0) {
+        document.getElementById('idea').innerHTML = "No ideas found for the specified hours range.";
+        document.getElementById('hours').innerHTML = "";
+        isTyping = false;
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * filteredIdeas.length);
+    const idea = filteredIdeas[randomIndex];
+    const hour = hours[ideas.indexOf(idea)];
 
     document.getElementById('idea').innerHTML = "";
     document.getElementById('hours').innerHTML = "";
