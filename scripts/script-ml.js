@@ -67,6 +67,7 @@ function typeWriter(text, elementId, callback) {
 }
 
 function generateIdea() {
+    confetti();
     if (isTyping) return;
     isTyping = true;
 

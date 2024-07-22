@@ -1,5 +1,5 @@
 body {
-    background-color: #f0e6d2;
+    background-color: #fbefd6;
     font-family: Arial, sans-serif;
 }
 
@@ -10,13 +10,18 @@ body {
 .box {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #000000;
+    background-color: #00afb3;
     color: white;
     text-decoration: none;
     border-radius: 22px;
     border: 2px;
     margin: 2px 1px;
+    transition: 0.2s;
   }
+
+.box:hover{
+  transform: scale(1.08);
+}
 
 .box1 {
     display: inline-block;
@@ -32,7 +37,7 @@ body {
 .box2 {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #f0e6d2;
+    background-color: #fbefd6;
     color: black;
     text-decoration: none;
     border-radius: 22px;
@@ -52,7 +57,7 @@ body {
     margin-left:0;
     height:5px;
     border-width:0;
-    background-color:#f0e6d2
+    background-color:#fbefd6
   }
 
 .break2 {
@@ -61,7 +66,7 @@ body {
     margin-left:0;
     height:10px;
     border-width:0;
-    background-color:#f0e6d2
+    background-color:#fbefd6
   }
 
   .break3 {
@@ -70,7 +75,7 @@ body {
     margin-left:0;
     height:0px;
     border-width:0;
-    background-color:#f0e6d2
+    background-color:#fbefd6
   }
 
 .bottom p {
@@ -79,4 +84,16 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.machine {
+  transition: transform 0.2s;
+}
+
+.machine:hover {
+  transform: scale(1.05);
+}
+
+.machine:active {
+  transform: scale(0.90);
 }
