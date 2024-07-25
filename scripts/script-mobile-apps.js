@@ -22,7 +22,7 @@ const ideas = [
 ];
 
 const hours = [
-    "Approx. 5 hours = 5 🎟️",
+    "Approx. 6 hours = 6 🎟️", // Added for "Develop a fitness tracking app!"
     "Approx. 10 hours = 10 🎟️",
     "Approx. 7 hours = 7 🎟️",
     "Approx. 3 hours = 3 🎟️",
