@@ -63,6 +63,7 @@ function typeWriter(text, elementId, callback) {
 
     document.getElementById(elementId).innerHTML = "";
     clearTimeout(typingTimeout);
+    typing()
 }
 
 function generateIdea() {
