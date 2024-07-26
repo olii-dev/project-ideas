@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Project Idea Generator - 3D Design Ideas</title>
+    <title>Project Idea Generator</title>
     <link type="text/css" rel="stylesheet" href="css/styles.css" />
     <link rel="shortcut icon" type="images/x-icon" href="images/icon-square.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Slackey|Gaegu">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="scripts/common.js" type="module"></script>
     <style>
         body {
             font-family: 'Gaegu';
             font-size: 13.5px;
             text-align: center;
         }
-        h1, h3, h2, .box {
+
+        h1,
+        h3,
+        h2,
+        .box {
             font-family: 'Slackey', cursive;
         }
     </style>
@@ -26,9 +33,13 @@
         </nav>
     </div>
 </head>
+
 <body>
-    <h1 style="font-size: 29px;">Project Idea Generator - 3D Design Ideas</h1>
-    <h3 style="font-size: 24px;">Want to create something <b>3D</b> for Hackclub's arcade but don't know what?<br>You're in the right place</h3>
+    <h1 style="font-size: 29px;" id="title">Project Idea Generator </h1>
+    <h3 style="font-size: 24px;">
+        Want to create something <b id="titleShort"></b> for Hackclub's arcade but don't know what?<br>
+        You're in the right place!
+    </h3>
     <h2 class="header">2. Enter your desired hours range and click the arcade machine to generate an idea!</h2>
     <label for="minHours">Min Hours:</label>
     <input class="box" type="number" id="minHours" name="minHours" min="1" max="20" value="1">
@@ -36,17 +47,13 @@
     <input class="box" type="number" id="maxHours" name="maxHours" min="1" max="20" value="20">
     <br><br>
     <a class="box1" onclick="generateIdea()">
-        <img class="machine" src="https://olii-dev.github.io/project-ideas/images/arcade-machine.png"
-            alt="Arcade Machine" width="250" height="250">
+        <img class="machine" src="/images/arcade-machine.png" alt="Arcade Machine" width="250" height="250">
     </a>
     <hr class="break">
     <div id="idea" style="font-size: 30px;"></div>
     <div id="hours" style="font-size: 20px;"></div>
-    
+
     <hr class="break2">
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
-    <script src="scripts/script-3d.js"></script>
 </body>
+
 </html>

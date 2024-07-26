@@ -1,48 +1,31 @@
-const ideas = [
-    "Design a futuristic drone!",
-    "Create a customizable modular furniture system!",
-    "Design a concept car for urban commuting!",
-    "Create a wearable tech accessory integrating 3D printing!",
-    "Design a smart home device with innovative features!",
-    "Create a sustainable architecture model for urban living!",
-    "Design a futuristic kitchen appliance!",
-    "Create a 3D-printed prosthetic limb with advanced functionalities!",
-    "Design a foldable bicycle for easy urban transport!",
-    "Create a robotic pet with interactive features!",
-    "Design a concept for a space habitat!",
-    "Create a 3D-printed fashion accessory or garment!",
-    "Design a compact and efficient solar panel array!",
-    "Create a medical device for remote healthcare!",
-    "Design a 3D-printed sculpture for public art!",
-    "Create a concept for a sustainable energy generator!",
-    "Design a smart gardening device for urban spaces!",
-    "Create a 3D-printed musical instrument!",
-    "Design a virtual reality headset!",
-    "Design a floating modular structure for disaster relief!"
-];
 
-const hours = [
-    "Approx. 8 hours = 8 🎟️",
-    "Approx. 6 hours = 6 🎟️",
-    "Approx. 12 hours = 12 🎟️",
-    "Approx. 4 hours = 4 🎟️",
-    "Approx. 10 hours = 10 🎟️",
-    "Approx. 15 hours = 15 🎟️",
-    "Approx. 8 hours = 8 🎟️",
-    "Approx. 12 hours = 12 🎟️",
-    "Approx. 6 hours = 6 🎟️",
-    "Approx. 10 hours = 10 🎟️",
-    "Approx. 20 hours = 20 🎟️",
-    "Approx. 4 hours = 4 🎟️",
-    "Approx. 12 hours = 12 🎟️",
-    "Approx. 10 hours = 10 🎟️",
-    "Approx. 6 hours = 6 🎟️",
-    "Approx. 15 hours = 15 🎟️",
-    "Approx. 8 hours = 8 🎟️",
-    "Approx. 4 hours = 4 🎟️",
-    "Approx. 10 hours = 10 🎟️",
-    "Approx. 15 hours = 15 🎟️",
-];
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    alert('Query parameter ' + variable + ' not found');
+}
+
+var category = getQueryVariable("cat");
+
+console.log(category);
+
+const submodule = import(`./data/${category}.js`).await;
+const title = submodule.title;
+const titleShort = submodule.titleShort;
+const ideas = submodule.ideas;
+
+function setTitle() {
+    document.getElementById("title").innerHTML += ` - ${title}`;
+    document.getElementById("titleShort").innerHTML += `${titleShort}`;
+}
+
+window.onload = setTitle();
 
 let isTyping = false;
 let typingTimeout;
@@ -99,7 +82,7 @@ function generateIdea() {
     const maxHours = parseInt(document.getElementById('maxHours').value);
 
     const filteredIdeas = ideas.filter((idea, index) => {
-        const hourValue = parseInt(hours[index].match(/\d+/)[0]);
+        const hourValue = idea[1];
         return hourValue >= minHours && hourValue <= maxHours;
     });
 
@@ -111,13 +94,13 @@ function generateIdea() {
     }
 
     const randomIndex = Math.floor(Math.random() * filteredIdeas.length);
-    const idea = filteredIdeas[randomIndex];
-    const hour = hours[ideas.indexOf(idea)];
+    const idea = filteredIdeas[randomIndex][0];
+    const hour = filteredIdeas[randomIndex][1];
 
     document.getElementById('idea').innerHTML = "";
     document.getElementById('hours').innerHTML = "";
 
     typeWriter(idea, 'idea', function() {
-        typeWriter(` ${hour}`, 'hours');
+        typeWriter(`Approx. ${hour} hours = ${hour} 🎟️`, 'hours');
     });
 }
