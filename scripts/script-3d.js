@@ -50,14 +50,38 @@ let typingTimeout;
 function typeWriter(text, elementId, callback) {
     let i = 0;
 
+    // We check if the string ends with the ticket emoji.
+    // Even though JS' charAt works with accented characters, such as 'é',
+    // this emoji (U+1F39F U+FE0F) is encoded with 3 UTF-16 characters:
+    // first a high/low surrogate pair for the first codepoint, then a
+    // third UTF-16 character for the second codepoint.
+    // We therefore append these 3 characters all at once to prevent weird artifacts.
+
+    let endsTicket = text.endsWith("🎟️");
+
     function typing() {
-        if (i < text.length) {
-            document.getElementById(elementId).innerHTML += text.charAt(i);
-            i++;
-            typingTimeout = setTimeout(typing, 50);
+        if (endsTicket) {
+            if (i < text.length - 3) {
+                document.getElementById(elementId).innerHTML += text.charAt(i);
+                i++;
+                typingTimeout = setTimeout(typing, 50);
+            } else if (i == text.length - 3) {
+                document.getElementById(elementId).innerHTML += "🎟️";
+                i++;
+                typingTimeout = setTimeout(typing, 50);
+            } else {
+                isTyping = false;
+                if (callback) callback();
+            }
         } else {
-            isTyping = false;
-            if (callback) callback();
+            if (i < text.length) {
+                document.getElementById(elementId).innerHTML += text.charAt(i);
+                i++;
+                typingTimeout = setTimeout(typing, 50);
+            } else {
+                isTyping = false;
+                if (callback) callback();
+            }
         }
     }
 
@@ -90,8 +114,8 @@ function generateIdea() {
     const idea = filteredIdeas[randomIndex];
     const hour = hours[ideas.indexOf(idea)];
 
-    document.getElementById('idea').innerHTML = ""; 
-    document.getElementById('hours').innerHTML = ""; 
+    document.getElementById('idea').innerHTML = "";
+    document.getElementById('hours').innerHTML = "";
 
     typeWriter(idea, 'idea', function() {
         typeWriter(` ${hour}`, 'hours');
