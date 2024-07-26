@@ -1,39 +1,29 @@
+// what comes after '#' in the URL (substring trims)
+var category = window.location.hash.substring(1);
 
-function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        if (pair[0] == variable) {
-            return pair[1];
-        }
-    }
-    alert(`Query parameter ${variable} not found`);
-}
-
-var category = getQueryVariable("cat");
+if (category.length == 0) alert("The URL parameter after the hash ('#') was not set.");
 
 // basically wait for the submodule to load before doing any of this
 (async () => {
     let title = null;
-    let adjective = null;
+    let description = null;
     let ideas = null;
     try {
         let mod = await import(`./data/${category}.js`);
         title = mod.title;
-        adjective = mod.adjective;
+        description = mod.description;
         ideas = mod.ideas;
     } catch (error) {
         alert(`Data loading failed:
 
 ${error}
 
-This probably means that the URL parameter 'cat' was set improperly.`);
+This probably means that the URL parameter after the hash ('#') was set improperly.`);
     }
 
     function setTitle() {
         document.getElementById("title").innerHTML += ` - ${title}`;
-        document.getElementById("adjective").innerHTML += `${adjective}`;
+        document.getElementById("description").innerHTML += `${description}`;
     }
 
     window.onload = setTitle();

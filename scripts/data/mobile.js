@@ -1,6 +1,6 @@
-const title = "Mobile Apps";
-const sentence = "Mobile app ideas for Hackclub's arcade!";
-const ideas = [
+export const title = "Mobile Apps";
+export const description = "Mobile app ideas for Hack Club's Arcade!";
+export const ideas = [
     ["Develop a fitness tracking app!", 5],
     ["Create a mobile game!", 10],
     ["Build a personal finance management app!", 7],

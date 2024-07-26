@@ -1,6 +1,6 @@
-const title = "Animation";
-const adjective = "animated";
-const ideas = [
+export const title = "Animation";
+export const description = "Explore exciting animation project ideas for Hack Club's Arcade!";
+export const ideas = [
     ["Create a short animated film!", 8],
     ["Develop a character animation for a game!", 6],
     ["Design an animated explainer video!", 10],

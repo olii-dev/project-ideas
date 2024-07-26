@@ -1,6 +1,6 @@
-const title = "Machine Learning";
-const adjective = "machine learning";
-const ideas = [
+export const title = "Machine Learning";
+export const description = "Explore exciting machine learning project ideas for Hack Club's Arcade!";
+export const ideas = [
     ["Develop a recommendation system for movies!", 5],
     ["Create a chatbot using natural language processing!", 8],
     ["Build a sentiment analysis tool for social media!", 10],

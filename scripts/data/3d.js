@@ -1,5 +1,5 @@
 export const title = "3D Design Ideas";
-export const adjective = "3D";
+export const description = "Cool 3D ideas for Hack Club's Arcade!";
 export const ideas = [
     ["Design a futuristic drone!", 8],
     ["Create a customizable modular furniture system!", 6],
