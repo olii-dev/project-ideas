@@ -11,12 +11,19 @@ a {
 }
 
 h1,
-h2 {
+h2,
+a.home {
     font-family: 'Slackey', sans;
 }
 
 .header {
     color: black;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
 }
 
 .box {
