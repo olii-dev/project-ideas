@@ -1,11 +1,23 @@
 body {
+    font-size: 15.5px;
+    text-align: center;
     background-color: #fbefd6;
-    font-family: Arial, sans-serif;
+}
+
+body,
+h3,
+a {
+    font-family: 'Gaegu', cursive;
+}
+
+h1,
+h2 {
+    font-family: 'Slackey', sans;
 }
 
 .header {
     color: black;
- }
+}
 
 .box {
     display: inline-block;
@@ -17,10 +29,10 @@ body {
     border: 2px;
     margin: 2px 1px;
     transition: 0.2s;
-  }
+}
 
-.box:hover{
-  transform: scale(1.08);
+.box:hover {
+    transform: scale(1.08);
 }
 
 .box1 {
@@ -32,7 +44,7 @@ body {
     border-radius: 22px;
     border: 2px;
     margin: 2px 1px;
-  }
+}
 
 .box2 {
     display: inline-block;
@@ -43,7 +55,7 @@ body {
     border-radius: 22px;
     border: 2px;
     margin: 2px 1px;
-  }
+}
 
 .idea {
     margin-top: 20px;
@@ -52,31 +64,31 @@ body {
 }
 
 .break {
-    width:100%;
-    text-align:left;
-    margin-left:0;
-    height:5px;
-    border-width:0;
-    background-color:#fbefd6
-  }
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    height: 5px;
+    border-width: 0;
+    background-color: #fbefd6
+}
 
 .break2 {
-    width:100%;
-    text-align:left;
-    margin-left:0;
-    height:10px;
-    border-width:0;
-    background-color:#fbefd6
-  }
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    height: 10px;
+    border-width: 0;
+    background-color: #fbefd6
+}
 
-  .break3 {
-    width:100%;
-    text-align:left;
-    margin-left:0;
-    height:0px;
-    border-width:0;
-    background-color:#fbefd6
-  }
+.break3 {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    height: 0px;
+    border-width: 0;
+    background-color: #fbefd6
+}
 
 .bottom p {
     text-align: center;
@@ -87,13 +99,13 @@ body {
 }
 
 .machine {
-  transition: transform 0.2s;
+    transition: transform 0.2s;
 }
 
 .machine:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .machine:active {
-  transform: scale(0.90);
+    transform: scale(0.90);
 }
